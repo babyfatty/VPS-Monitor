@@ -1,0 +1,14 @@
+<form id="info-form" action="" method="post">
+    <fieldset>
+        <legend>登录</legend>
+        {{ form.non_field_errors }}
+        {% csrf_token %}
+        {% for field in form %}
+        <div>
+            <p>{{ field.label_tag }}:</p>
+            {{ field }} {{ field.errors }}
+        </div>
+        {% endfor %}
+        <div><input type="submit" value="登录" class="btn"/></div>
+    </fieldset>
+</form>
